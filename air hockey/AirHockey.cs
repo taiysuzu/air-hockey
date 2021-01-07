@@ -1,4 +1,8 @@
-﻿using System;
+﻿/* Taiyo Suzuki
+ * January 7, 2021
+ * A simple Air Hockey game. First to score 3 points wins.
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +15,7 @@ using System.Windows.Forms;
 namespace air_hockey
 {
     public partial class AirHockey : Form
-    {  
+    {
         int striker1X = 185;
         int striker1Y = 60;
         int player1Score = 0;
@@ -271,6 +275,7 @@ namespace air_hockey
             Refresh();
         }
 
+        //draw everything on screen
         private void AirHockey_Paint(object sender, PaintEventArgs e)
         {
             Point puck = new Point(puckX, puckY);
