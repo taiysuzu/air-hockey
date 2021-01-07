@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace air_hockey
 {
@@ -53,6 +54,11 @@ namespace air_hockey
         int randomY1 = 0;
         int randomX2 = 0;
         int randomY2 = 0;
+
+        SoundPlayer handleHit = new SoundPlayer(Properties.Resources.handle_smack_2_0);
+        SoundPlayer sideHit = new SoundPlayer(Properties.Resources.side_smack);
+        SoundPlayer score = new SoundPlayer(Properties.Resources.ding2);
+        SoundPlayer win = new SoundPlayer(Properties.Resources.winner);
 
         public AirHockey()
         {
@@ -174,12 +180,14 @@ namespace air_hockey
             {
                 puckXSpeed *= -1;
                 puckXSpeed--;
+                sideHit.Play();
             }
             //top and bottom
             if (puckY < 50 || puckY > 600)
             {
                 puckYSpeed *= -1;
                 puckYSpeed--;
+                sideHit.Play();
             }
 
             //create hitboxes for collison detetcion
@@ -199,6 +207,7 @@ namespace air_hockey
                     puckXSpeed += randomX1;
                     puckYSpeed += randomY1;
                     puckXSpeed *= -1;
+                    handleHit.Play();
                 }
             }
             if (player2Rec.IntersectsWith(puckRec))
@@ -210,6 +219,7 @@ namespace air_hockey
                     puckXSpeed += randomX2 * -1;
                     puckYSpeed += randomY2 * -1;
                     puckXSpeed *= -1;
+                    handleHit.Play();
                 }
             }
             //collision detection for nets / scoring
@@ -224,6 +234,7 @@ namespace air_hockey
                 striker1Y = 60;
                 striker2X = 185;
                 striker2Y = 570;
+                score.Play();
             }
             if (puckRec.IntersectsWith(net2Rec))
             {
@@ -236,6 +247,7 @@ namespace air_hockey
                 striker1Y = 60;
                 striker2X = 185;
                 striker2Y = 570;
+                score.Play();
             }
             //puck speed decreases over time
             if (puckXSpeed > 0)
@@ -267,6 +279,7 @@ namespace air_hockey
             //check if either player has reached 3 points
             if (player1Score == 3 || player2Score == 3)
             {
+                win.Play();
                 gameTimer.Enabled = false;
             }
 

@@ -101,12 +101,30 @@ namespace air_hockey.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream ding2 {
+            get {
+                return ResourceManager.GetStream("ding2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap green {
             get {
                 object obj = ResourceManager.GetObject("green", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream handle_smack_2_0 {
+            get {
+                return ResourceManager.GetStream("handle_smack_2_0", resourceCulture);
             }
         }
         
@@ -147,6 +165,24 @@ namespace air_hockey.Properties {
             get {
                 object obj = ResourceManager.GetObject("puck", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream side_smack {
+            get {
+                return ResourceManager.GetStream("side_smack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream winner {
+            get {
+                return ResourceManager.GetStream("winner", resourceCulture);
             }
         }
     }

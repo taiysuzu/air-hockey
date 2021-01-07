@@ -107,5 +107,20 @@
   <ItemGroup>
     <None Include="Resources\puck.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\side smack.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\handle smack 2.0.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\winner.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ding.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ding2.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
