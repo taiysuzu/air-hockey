@@ -44,6 +44,12 @@ namespace air_hockey
         SolidBrush whiteBrush = new SolidBrush(Color.White);
         Font screenFont = new Font("Consolas", 16);
 
+        Random randGen = new Random();
+        int randomX1 = 0;
+        int randomY1 = 0;
+        int randomX2 = 0;
+        int randomY2 = 0;
+
         public AirHockey()
         {
             InitializeComponent();
@@ -184,8 +190,10 @@ namespace air_hockey
             {
                 if (puckXSpeed < 35 && puckYSpeed < 35)
                 {
-                    puckXSpeed += 15;
-                    puckYSpeed += 15;
+                    randomX1 = randGen.Next(-17, 17);
+                    randomY1 = randGen.Next(7, 17);
+                    puckXSpeed += randomX1;
+                    puckYSpeed += randomY1;
                     puckXSpeed *= -1;
                 }
             }
@@ -193,8 +201,10 @@ namespace air_hockey
             {
                 if (puckXSpeed < 35 && puckYSpeed < 35)
                 {
-                    puckXSpeed -= 15;
-                    puckYSpeed -= 15;
+                    randomX2 = randGen.Next(-17, 17);
+                    randomY2 = randGen.Next(7, 17);
+                    puckXSpeed += randomX2 * -1;
+                    puckYSpeed += randomY2 * -1;
                     puckXSpeed *= -1;
                 }
             }
@@ -255,6 +265,8 @@ namespace air_hockey
             {
                 gameTimer.Enabled = false;
             }
+
+
 
             Refresh();
         }
