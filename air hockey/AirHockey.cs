@@ -179,7 +179,7 @@ namespace air_hockey
             Rectangle net1Rec = new Rectangle(165, 0, 110, 50);
             Rectangle net2Rec = new Rectangle(165, 650, 110, 50);
 
-            //collision detection
+            //collision detection for players
             if (player1Rec.IntersectsWith(puckRec))
             {
                 if (puckXSpeed < 35 && puckYSpeed < 35)
@@ -198,7 +198,7 @@ namespace air_hockey
                     puckXSpeed *= -1;
                 }
             }
-            //if puck intersects with net, add to score
+            //collision detection for nets / scoring
             if (puckRec.IntersectsWith(net1Rec))
             {
                 player2Score++;
